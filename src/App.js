@@ -4,7 +4,7 @@ import './App.css';
 import SearchIcon from './search.svg';
 import MovieCard from './Movie';
 
-const API_URL = 'API_URL';
+const API_URL = 'https://www.omdbapi.com/?apikey=b86068a6';
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -15,10 +15,6 @@ const App = () => {
         const data = await response.json();
         setMovies(data.Search);
     }
-
-    useEffect(() => {
-        searchMovies('batman');
-    }, [])
 
     return (
         <div className='app'>
